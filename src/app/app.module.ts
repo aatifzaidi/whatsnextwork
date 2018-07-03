@@ -6,25 +6,41 @@ import { StatusBar } from '@ionic-native/status-bar';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { WhatsnextPage } from '../pages/whatsnext/whatsnext';
+import { TasksPage } from '../pages/tasks/tasks';
+import { CreatePage } from '../pages/create/create';
+import { DataProvider } from '../providers/data/data';
+import { IonicStorageModule } from '@ionic/storage';
+import { ItemDetailPage } from '../pages/item-detail/item-detail';
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage
+    HomePage,
+    WhatsnextPage,
+    TasksPage,
+    CreatePage,
+    ItemDetailPage,
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage
+    HomePage,
+    WhatsnextPage,
+    TasksPage,
+    CreatePage,
+    ItemDetailPage,
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    DataProvider
   ]
 })
 export class AppModule {}

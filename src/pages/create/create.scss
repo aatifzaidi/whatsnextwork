@@ -1,0 +1,14 @@
+page-create {
+    ion-list:first-child {
+        margin-top: 32px;
+      }
+      ion-list + ion-list {
+        margin-top: 0;
+      }
+
+
+      .outer-content-create {
+        background: linear-gradient(#00f260
+        , #0575e6);
+     }
+}

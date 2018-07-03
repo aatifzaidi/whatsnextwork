@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Create a new task
+    </ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only (click)="close()"><ion-icon name="close"></ion-icon></button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="outer-content-create">
+  
+  <ion-list>
+      <ion-item>
+          <!-- <ion-label>Title</ion-label> -->
+          <ion-input placeholder="Enter the Task" type="text" [(ngModel)]="title"></ion-input>
+        </ion-item>
+
+    <ion-item>
+        <!-- <ion-label>Task Description</ion-label> -->
+      <ion-input placeholder="Enter the Task Description" type="text" [(ngModel)]="description"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Date</ion-label>
+      <ion-datetime displayFormat="MMM DD YYYY" [(ngModel)]="event.month"></ion-datetime>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-label>Time</ion-label>
+      <ion-datetime displayFormat="h:mm A" pickerFormat="h mm A" [(ngModel)]="event.time"></ion-datetime>
+    </ion-item>
+
+    <button ion-item>
+    
+      <ion-label>Urgent</ion-label>
+    <ion-toggle [(ngModel)]="urgent"></ion-toggle>
+    </button>
+
+    <button ion-item>
+      <ion-label>Important</ion-label>
+      <ion-toggle [(ngModel)]="important"></ion-toggle>
+    </button>
+  </ion-list>
+
+  <ion-list>
+    <button ion-item (click)="saveItem()">
+      <ion-label>Add</ion-label>
+    </button>
+  </ion-list>
+
+</ion-content>
